@@ -18,41 +18,46 @@ import Contact from "./Component/Contact";
 import BookDetails from "./Component/BookDetails";
 import { CartProvider } from './context/CartContext';
 import CartPage from "./Component/CartPage";
+import CheckoutPage from "./Component/CheckoutPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement:<Errorpage></Errorpage>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",
-        element: <App />, 
+        element: <App />,
       },
       {
-         path:"/browesbooks",
-         element:<AllBooks></AllBooks>,
+        path: "/browesbooks",
+        element: <AllBooks></AllBooks>,
       },
       {
-        path:"Bestsellers",
-        element:<Bestsellers></Bestsellers>,
+        path: "Bestsellers",
+        element: <Bestsellers></Bestsellers>,
       },
       {
-        path:"contact",
-        element:<Contact></Contact>
+        path: "contact",
+        element: <Contact></Contact>
       },
       {
         path: "/book/:id",
         element: <BookDetails></BookDetails>,
       },
       {
-  path: "/cart",
-  element: <CartPage />,
-},
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/CheckoutPage",
+        element: <CheckoutPage></CheckoutPage>
+      },
     ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
+  <React.StrictMode>
     <CartProvider>
       <RouterProvider router={router} />
     </CartProvider>

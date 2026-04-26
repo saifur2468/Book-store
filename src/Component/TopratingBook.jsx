@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 const TopratingBook = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,9 +71,11 @@ const TopratingBook = () => {
                   </div>
                 </div>
 
-                <button className="w-full mt-5 bg-primary hover:bg-primary-focus text-white py-3 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all active:scale-95">
-                  Buy Now
-                </button>
+                                  <Link to={`/book/${book._id}`}>
+  <button className="btn btn-primary mt-3 w-full">
+    View Details
+  </button>
+</Link>
               </div>
             </div>
           ))}

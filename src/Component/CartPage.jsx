@@ -8,7 +8,7 @@ const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const total = subtotal + (cartItems.length > 0 ? 60 : 0); // 60 tk delivery charge
+  const total = subtotal + (cartItems.length > 0 ? 60 : 0);
 
   if (cartItems.length === 0) {
     return (
@@ -75,12 +75,14 @@ const CartPage = () => {
               <span className="text-primary">৳{total}</span>
             </div>
           </div>
+         <Link to="/CheckoutPage">
           <button 
-            onClick={() => Swal.fire("Ordered!", "Order placed successfully", "success")}
+      
             className="btn btn-primary w-full btn-lg rounded-xl border-none font-black flex items-center gap-2 group"
           >
             CHECKOUT NOW <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
+         </Link>
         </div>
       </div>
     </div>
@@ -88,3 +90,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
