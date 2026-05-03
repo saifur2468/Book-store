@@ -3,7 +3,8 @@ import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { useCart } from "../context/CartContext"; 
-
+import { FaBookAtlas } from "react-icons/fa6";
+import { FaBookReader } from "react-icons/fa";
 const Navbar = () => {
   const { cartCount, wishlistCount } = useCart(); 
 
@@ -37,14 +38,14 @@ const Navbar = () => {
           >
             <li><Link to="/">Home</Link></li>
             <li><Link to="/browesbooks">Browse Books</Link></li>
-            <li><Link to="/Bestsellers">Bestsellers</Link></li>
+            <li><Link to="/Bestsellers">Book News Section</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-primary cursor-pointer">
-          📚 Book Store
+        <Link to="/" className="text-2xl font-bold text-primary flex justify-center items-center gap-2 cursor-pointer">
+          <FaBookReader /> Book Store
         </Link>
       </div>
 
@@ -53,7 +54,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 font-medium gap-2">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/browesbooks">Browse Books</Link></li>
-          <li><Link to="/Bestsellers">Bestsellers</Link></li>
+          <li><Link to="/Bestsellers">Book News Section</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
